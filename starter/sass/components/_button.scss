@@ -1,0 +1,90 @@
+.btn {
+    &,
+    &:link,
+    &:visited {
+        text-transform: uppercase;
+        text-decoration: none;
+        /* 15px for top-bottom and 40px for left n right */
+        padding: 1.5rem 4rem;
+        display: inline-block;
+        border-radius:$border-r-big;
+        transition: all .5s;
+        position: relative;
+        font-size: 1.6rem;
+
+        //Change for the <button> element
+        border: none;
+        cursor: pointer;
+    }
+    &:hover {
+        /* Para ir arriba es un valor negativo, por que asi lo maneja css, Y va de top a bottom */
+        transform: translateY(-4px);
+        box-shadow: 0 1rem 2rem rgba($color-black, .3);
+        &::after {
+            transform: scaleX(1.3) scaleY(1.5);
+            opacity: 0;
+        }
+    }
+    &:active,
+    &:focus {
+        outline: none;
+        transform: translateY(-1rem);
+        box-shadow: 0 .5rem 7rem rgba($color-black, .3);
+    }
+    &--white {
+        background-color: $color-white;
+        color: $color-grey-dark;
+        &::after {
+            background-color: $color-white;
+            color: $color-grey-dark;
+        }
+    }
+
+    &--green {
+        background-color: $color-primary;
+        color: $color-white;
+        &::after {
+            background-color: $color-primary;
+            color: $color-white;
+        }
+    }
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: $border-r-big;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+    &--animated {
+        animation: moveInBottom 1s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: $default-font-size;
+        color: $color-primary;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary;
+        padding: 3px;
+        transition: all .2s;
+    }
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .3);
+        transform: translateY(-2px);
+    }
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .3);
+        transform: translateY(0);
+    }
+}

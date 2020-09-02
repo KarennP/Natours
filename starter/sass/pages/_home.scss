@@ -1,0 +1,63 @@
+.section-about{
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+
+    // Esto es para cubrir el triangulo que hicimos en el header, 
+    // el header mide 95vh, pero para formar el triangulo recorrimos la esquina a 75vh, 95 - 75 = 20
+    // y es negativo por que asi maneja css los valores en Y, negativo sube  y positivo baja
+    margin-top: -20vh;
+}
+
+.section-features {
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom, 
+        rgba($color-primary-light, 0.87),
+        rgba($color-primary-dark, 0.87)
+        ), 
+    url("../img/nat-4.jpg");
+    background-size: cover;
+
+    transform: skewY(-7deg);
+    margin-top: -9rem;
+
+    //Seleccionamos todos los direct child de section-features
+    & > * {
+        transform: skewY(7deg);
+    }
+}
+
+.section-tours {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0 15rem 0;
+    margin-top: -9rem;   
+}
+
+.section-stories {
+    padding: 15rem 0;
+    background-color: transparent;
+    position: relative;
+}
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+}
+
+.book {
+    background-image: linear-gradient( 110deg,
+                                         rgba($color-white, .9) 0%,
+                                         rgba($color-white, .7) 50%,
+                                        transparent 50%) , 
+                                        url(../img/nat-10.jpg);
+    background-size: 100%;  //100% =  cover
+    border-radius: $border-r-small;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .3);
+    height: 50rem;
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+        
+    }
+}
